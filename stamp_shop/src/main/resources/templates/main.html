@@ -1,0 +1,121 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Всемаркиру</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="app-header__container">
+  <a href="/">
+    <img class="mainimg" src="img/main/main.png">
+  </a>
+  <div class="basket">
+    <a href="/basket"><img class="basketimg" src="img/main/корзина.png"></a>
+  </div>
+</div>
+<div class="containerr">
+  <nav class="content-menu">
+    <ul>
+      <li>
+        <a href="/stamps/1">Отечественные марки</a>
+      </li>
+      <li>
+        <a href="/stamps/2"> Марки по странам</a>
+      </li>
+      <li>
+        <a href="/stamps/3" >Спортивные марки</a>
+      </li>
+      <li>
+        <a href="/stamps/4">Наборы и комплекты марок</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+<div class="card-deck mb-3 text-center">
+  <div class="card mb-4 box-shadow">
+    <div class="card-body">
+      <a href="/stamps/1" class="p-2 text-dark">
+        <div class="img">
+          <img src="img/main/Отечественные.jpg" alt="">
+        </div>
+        <div class="label">
+          <div class="centered-">Отечественные марки</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="card mb-4 box-shadow">
+    <div class="card-body">
+      <a href="/stamps/2" class="p-2 text-dark">
+        <div class="img">
+          <img src="img/main/по странам.jpg" alt="">
+        </div>
+        <div class="label">
+          <div class="centered-">Марки по странам</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="card mb-4 box-shadow">
+    <div class="card-body">
+      <a href="/stamps/3" class="p-2 text-dark">
+        <div class="img">
+          <img src="img/main/по тематике.jpg" alt="">
+        </div>
+        <div class="label">
+          <div class="centered-">Спортивные марки</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+<div class="card-deck mb-3 text-center">
+  <div class="card mb-4 box-shadow">
+    <div class="card-body">
+      <a href="/stamps/4" class="p-2 text-dark">
+        <div class="img">
+          <img src="img/main/наборы и комплекты.jpg" alt="">
+        </div>
+        <div class="label">
+          <div class="centered-">Наборы и комплекты марок</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="allOtziv">
+  <img class="commentimg" src="img/main/отзывы.png">
+  <div class="otziv">
+    <form action="comment/add" method="post" >
+      <input name="name" id="name" required placeholder="Имя">
+      <input name="text" id="text" required placeholder="Отзыв">
+      <button>Написать</button>
+    </form>
+  </div>
+
+  <div class="comment">
+
+  </div>
+
+  <div class="otziv">
+    <p><span>Илья </span> </p>
+    <p>Лучший магазин</p>
+  </div>
+
+</div>
+</div>
+<script src="JS/main.js"></script>
+</body>
+</html>
+
+

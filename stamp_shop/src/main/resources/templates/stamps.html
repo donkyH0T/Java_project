@@ -1,0 +1,69 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Всемаркиру</title>
+  <link rel="stylesheet" href="/CSS/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="app-header__container">
+  <a href="/">
+    <img class="mainimg" src="/img/main/main.png">
+  </a>
+  <div class="basket">
+    <a href="/basket"><img class="basketimg" src="/img/main/корзина.png"></a>
+  </div>
+</div>
+
+
+
+
+<div class="main-column">
+
+    <div class="card-body" >
+
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2>Марка добавлена в корзину</h2>
+              <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+              <p id="name">Марка:</p>
+              <p id="price">₽</p>
+            </div>
+            <div class="modal-footer">
+              <button><a href="/basket">Перейти в корзину</a></button>
+              <button><a href="#" onclick="f()">Продолжить покупки</a></button>
+            </div>
+          </div>
+        </div>
+
+      <table class="table_price">
+        <caption th:text="${center}" style="caption-side: inherit;">text</caption>
+          <tr th:each="stamps : ${stampsList}">
+
+            <th th:text="${stamps.getName()}" >Имя</th>
+            <th th:text="'Цена: '+${stamps.getPrice()}+'руб'">Цена</th>
+            <th th:text="'Страна: '+${stamps.getCountry().getName()}">Страна</th>
+            <th>
+              <img class="cardimg" th:src="@{'/img/'+${stamps.getURL()}}" alt="" />
+            </th>
+            <th>
+              <button th:id="${stamps.getId()}" th:name="${stamps.getName()+'#'+stamps.getPrice()}"  onclick="basket(id,name)">В корзину</button>
+            </th>
+
+          </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+<script src="/JS/stamps.js"></script>
+</body>
+</html>
